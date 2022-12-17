@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row g-5">
+    <h4 class="mb-3">Send Mail</h4>
+    <form method="post" asp-controller="Home" asp-action="Index">
+        <div class="row g-3">
+            <div class="col-12">
+                <input class="form-control" type="text" name="to" placeholder="Enviar a" required />
+            </div>
+            <div class="col-12">
+                <input class="form-control" type="text" name="subject" placeholder="Asunto" required />
+            </div>
+            <div class="col-12">
+                <textarea class="form-control" type="text" name="body" placeholder="Mensaje" required></textarea>
+            </div>
+            <div class="col-12">
+                <input type="submit" value="Enviar" />
+            </div>            
+        </div>
+        <div class="form-group">
+            <div class="text-sucess">
+                @if (TempData["alert"] != null)
+                {
+                    @TempData["alert"];
+                }
+            </div>
+        </div>
+
+
+
+    </form>
+    
+</div>
